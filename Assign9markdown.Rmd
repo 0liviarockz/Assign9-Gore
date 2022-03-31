@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+Open dessertrating data.
+```{r}
+View(dessertrating)
+```
+Summary of data.
+```{r}
+summary(dessertrating)
+```
+Graph of data
+```{r}
+library(ggplot2)
+dessertrating$rating<- as.factor(dessertrating$rating)
+ggplot(dessertrating, aes(rating, servings, color= as.factor(Desserts)))+ geom_point() +  scale_color_brewer(palette = "Pastel1")
+``` 
+
